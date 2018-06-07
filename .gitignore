@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+\.vs/
+
+ipch/
+
+BaseConverter\.VC\.db
+
+lib/
