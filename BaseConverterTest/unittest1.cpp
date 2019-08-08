@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "..\BaseConverter\BaseConverter.h"
+#include "../BaseConverter/BaseConverter.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace BaseConverter;
@@ -13,38 +13,38 @@ namespace BaseConverterTest
 
 			TEST_METHOD(Test_DecimalToBase_string)
 			{
-				Assert::AreEqual(BinaryString, DecimalToBase(BinaryToDecimal, Radix::Binary, "", 8, "0"));
-				Assert::AreEqual(OctalString, DecimalToBase(OctalToDecimal, Radix::Octal, ""));
-				Assert::AreEqual("0" + OctalString, DecimalToBase(OctalToDecimal, Radix::Octal, "0"));
-				Assert::AreEqual(HexString, DecimalToBase(HexToDecimal, Radix::Hexadecimal, ""));
-				Assert::AreEqual("0x00" + HexString, DecimalToBase(HexToDecimal, Radix::Hexadecimal, "0x", 4, "0"));
-				Assert::AreEqual(HexatridecimalString, DecimalToBase(HexatridecimalToDecimal, Radix::Hexatrigecimal, ""));
+				Assert::AreEqual(BinaryString, decimal_to_base(BinaryToDecimal, Radix::Binary, "", 8, "0"));
+				Assert::AreEqual(OctalString, decimal_to_base(OctalToDecimal, Radix::Octal, ""));
+				Assert::AreEqual("0" + OctalString, decimal_to_base(OctalToDecimal, Radix::Octal, "0"));
+				Assert::AreEqual(HexString, decimal_to_base(HexToDecimal, Radix::Hexadecimal, ""));
+				Assert::AreEqual("0x00" + HexString, decimal_to_base(HexToDecimal, Radix::Hexadecimal, "0x", 4, "0"));
+				Assert::AreEqual(HexatridecimalString, decimal_to_base(HexatridecimalToDecimal, Radix::Hexatrigecimal, ""));
 			}
 
 			TEST_METHOD(Test_DecimalToBase_wstring)
 			{
-				Assert::AreEqual(BinaryWString, DecimalToBase(BinaryToDecimal, Radix::Binary, L"", 8, L"0"));
-				Assert::AreEqual(OctalWString, DecimalToBase(OctalToDecimal, Radix::Octal, L""));
-				Assert::AreEqual(L"0" + OctalWString, DecimalToBase(OctalToDecimal, Radix::Octal, L"0"));
-				Assert::AreEqual(HexWString, DecimalToBase(HexToDecimal, Radix::Hexadecimal, L""));
-				Assert::AreEqual(L"0x00" + HexWString, DecimalToBase(HexToDecimal, Radix::Hexadecimal, L"0x", 4, L"0"));
-				Assert::AreEqual(HexatridecimalWString, DecimalToBase(HexatridecimalToDecimal, Radix::Hexatrigecimal, L""));
+				Assert::AreEqual(BinaryWString, decimal_to_base(BinaryToDecimal, Radix::Binary, L"", 8, L"0"));
+				Assert::AreEqual(OctalWString, decimal_to_base(OctalToDecimal, Radix::Octal, L""));
+				Assert::AreEqual(L"0" + OctalWString, decimal_to_base(OctalToDecimal, Radix::Octal, L"0"));
+				Assert::AreEqual(HexWString, decimal_to_base(HexToDecimal, Radix::Hexadecimal, L""));
+				Assert::AreEqual(L"0x00" + HexWString, decimal_to_base(HexToDecimal, Radix::Hexadecimal, L"0x", 4, L"0"));
+				Assert::AreEqual(HexatridecimalWString, decimal_to_base(HexatridecimalToDecimal, Radix::Hexatrigecimal, L""));
 			}
 
 			TEST_METHOD(Test_BaseToDecimal_string)
 			{
-				Assert::AreEqual(BinaryToDecimal, BaseToDecimal(BinaryString, Radix::Binary));
-				Assert::AreEqual(OctalToDecimal, BaseToDecimal(OctalString, Radix::Octal));
-				Assert::AreEqual(HexToDecimal, BaseToDecimal(HexString, Radix::Hexadecimal));
-				Assert::AreEqual(HexatridecimalToDecimal, BaseToDecimal(HexatridecimalString, Radix::Hexatrigecimal));
+				Assert::AreEqual(BinaryToDecimal, base_to_decimal(BinaryString, Radix::Binary));
+				Assert::AreEqual(OctalToDecimal, base_to_decimal(OctalString, Radix::Octal));
+				Assert::AreEqual(HexToDecimal, base_to_decimal(HexString, Radix::Hexadecimal));
+				Assert::AreEqual(HexatridecimalToDecimal, base_to_decimal(HexatridecimalString, Radix::Hexatrigecimal));
 			}
 
 			TEST_METHOD(Test_BaseToDecimal_wstring)
 			{
-				Assert::AreEqual(BinaryToDecimal, BaseToDecimal(BinaryWString, Radix::Binary));
-				Assert::AreEqual(OctalToDecimal, BaseToDecimal(OctalWString, Radix::Octal));
-				Assert::AreEqual(HexToDecimal, BaseToDecimal(HexWString, Radix::Hexadecimal));
-				Assert::AreEqual(HexatridecimalToDecimal, BaseToDecimal(HexatridecimalWString, Radix::Hexatrigecimal));
+				Assert::AreEqual(BinaryToDecimal, base_to_decimal(BinaryWString, Radix::Binary));
+				Assert::AreEqual(OctalToDecimal, base_to_decimal(OctalWString, Radix::Octal));
+				Assert::AreEqual(HexToDecimal, base_to_decimal(HexWString, Radix::Hexadecimal));
+				Assert::AreEqual(HexatridecimalToDecimal, base_to_decimal(HexatridecimalWString, Radix::Hexatrigecimal));
 			}
 
 		private:

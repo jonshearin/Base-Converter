@@ -1,6 +1,4 @@
 #pragma once
-#ifndef BaseConverter_h__
-#define BaseConverter_h__
 
 #include <Windows.h>
 #include <string>
@@ -50,10 +48,9 @@ namespace BaseConverter
         Hexatrigecimal  = 36
     };
 
-	std::string DecimalToBase(UINT64 number, UINT64 radix, const std::string &prefix = "", UINT minLength = 0, const std::string &pad = "0");
-	std::wstring DecimalToBase(UINT64 number, UINT64 radix, const std::wstring &prefix = L"", UINT minLength = 0, const std::wstring &pad = L"0");
-	UINT64 BaseToDecimal(const std::string &numberString, UINT64 radix);
-	UINT64 BaseToDecimal(const std::wstring &numberString, UINT64 radix);
+    std::string decimal_to_base(UINT64 number, UINT64 radix, const std::string &prefix = "", UINT minLength = 0, const std::string &pad = "0");
+    std::wstring decimal_to_base(UINT64 number, UINT64 radix, const std::wstring &prefix = L"", UINT minLength = 0, const std::wstring &pad = L"0");
+    UINT64 base_to_decimal(const std::string &numberString, UINT64 radix);
+    UINT64 base_to_decimal(const std::wstring &numberString, UINT64 radix);
 
 }
-#endif // BaseConverter_h__
